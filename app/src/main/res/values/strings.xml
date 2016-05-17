@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">RxJavaDemo</string>
+
+    <string-array name="fruits">
+        <item>@string/apple</item>
+        <item>@string/pear</item>
+        <item>@string/peach</item>
+        <item>@string/plum</item>
+    </string-array>
+
+    <string name="apple">Apple</string>
+    <string name="pear">Pear</string>
+    <string name="peach">Peach</string>
+    <string name="plum">Plum</string>
+
 </resources>
