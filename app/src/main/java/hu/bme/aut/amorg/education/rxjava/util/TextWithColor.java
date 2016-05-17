@@ -1,6 +1,7 @@
-package hu.bme.aut.amorg.education.rxjava;
+package hu.bme.aut.amorg.education.rxjava.util;
 
 public class TextWithColor {
+
     private final String text;
     private final Integer color;
 
@@ -9,7 +10,6 @@ public class TextWithColor {
         this.color = integer;
     }
 
-
     public String getText() {
         return text;
     }
@@ -17,4 +17,5 @@ public class TextWithColor {
     public Integer getColor() {
         return color;
     }
+
 }
