@@ -18,4 +18,5 @@ public class OnSeekBarChangeAdapter implements SeekBar.OnSeekBarChangeListener {
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+
 }

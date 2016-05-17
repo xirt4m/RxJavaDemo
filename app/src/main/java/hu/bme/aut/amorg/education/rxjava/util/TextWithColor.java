@@ -1,4 +1,4 @@
-package hu.bme.aut.amorg.education.rxjava;
+package hu.bme.aut.amorg.education.rxjava.util;
 
 public class TextWithColor {
 

@@ -8,9 +8,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import hu.bme.aut.amorg.education.rxjava.ObservableStore;
+import hu.bme.aut.amorg.education.rxjava.util.ObservableStore;
 import hu.bme.aut.amorg.education.rxjava.R;
-import hu.bme.aut.amorg.education.rxjava.TextWithColor;
+import hu.bme.aut.amorg.education.rxjava.util.TextWithColor;
 import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -20,12 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    //<editor-fold desc="UI">
     private TextView textView;
     private SeekBar seekBar;
     private Button button;
+    //</editor-fold>
 
+    //<editor-fold desc="Rx Subscriptions">
     private Subscription subscriptionStringAndSeekBar;
     private Subscription subscriptionNetworkTime;
+    //</editor-fold>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +51,11 @@ public class MainActivity extends AppCompatActivity {
         if (subscriptionStringAndSeekBar != null) {
             subscriptionStringAndSeekBar.unsubscribe();
         }
-
         if (subscriptionNetworkTime != null) {
             subscriptionNetworkTime.unsubscribe();
         }
         super.onDestroy();
     }
-
 
     private void startStringAndSeekbarObservable() {
         Observable<String> stringObservable = ObservableStore.getBetterStringObservable(getApplicationContext());
@@ -84,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(this::onTimeReceived, this::onError);
     }
 
-    private void onTimeReceived(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+    private void onTimeReceived(String time) {
+        Toast.makeText(this, time, Toast.LENGTH_LONG).show();
     }
 
 }
